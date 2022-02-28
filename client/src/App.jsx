@@ -1,9 +1,9 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import styled from "styled-components";
 
-import Main from "./container/Main";
-import Login from "./container/Login";
+import Main from "./containers/Main";
+import Login from "./containers/Login";
 import BackgroundImg from "./img/todo_background.jpg";
 
 const Background = styled.div`
@@ -17,10 +17,14 @@ const Background = styled.div`
 function App() {
   return (
     <Background>
-      <Routes>
-        <Route path="/" element={<Main></Main>} />
-        <Route path="/Login" element={<Login></Login>} />
-      </Routes>
+      <BrowserRouter>
+        <Routes>
+          {/* Github hosting issue */}
+          <Route path="/TODO-LIST-APP" element={<Navigate replace to="/" />} />
+          <Route path="/Login" element={<Login></Login>} />
+          <Route path="/*" element={<Main></Main>} />
+        </Routes>
+      </BrowserRouter>
     </Background>
   );
 }

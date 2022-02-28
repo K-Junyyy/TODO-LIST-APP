@@ -15,6 +15,7 @@ const Background = styled.div`
 `;
 
 function App() {
+  console.log(window.location);
   return (
     <Background>
       <BrowserRouter>

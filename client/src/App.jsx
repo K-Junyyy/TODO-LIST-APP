@@ -19,8 +19,6 @@ function App() {
     <Background>
       <BrowserRouter>
         <Routes>
-          {/* Github hosting issue */}
-          <Route path="/TODO-LIST-APP" element={<Navigate replace to="/" />} />
           <Route path="/Login" element={<Login></Login>} />
           <Route path="/*" element={<Main></Main>} />
         </Routes>
